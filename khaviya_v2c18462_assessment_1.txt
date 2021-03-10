@@ -1,0 +1,399 @@
+Method Overloading
+
+1)public class Sum { 
+    public int sum(int x, int y) 
+    { 
+        return (x+y); 
+    } 
+  
+    public int sum(int x, int y, int z) 
+    { 
+        return (x+y+z); 
+    } 
+   
+    public static void main(String args[]) 
+    { 
+        Sum s = new Sum(); 
+        System.out.println(s.sum(5, 10)); 
+        System.out.println(s.sum(5, 10, 20)); 
+       
+    } 
+}
+
+
+2)public class FunClass{
+   public void disp(int a)
+{
+System.out.println(“Display a”+a);
+}
+public void disp(float b)
+{
+System.out.println(“Display b”+b);
+}
+
+class DemClass{
+public static void main(String[] args)
+{
+DemClass obj=new DemClass();
+obj.disp(5);
+obj.disp(10);
+}
+}
+
+
+3) public class Sub { 
+    public int sub(int x, int y) 
+    { 
+        return (x - y); 
+  } 
+  
+    public int sub(int x, int y, int z) 
+    { 
+        return (x-y-z); 
+}
+   
+    public static void main(String args[]) 
+    { 
+        Sub s = new Sub(); 
+        System.out.println(s.sub(5, 10)); 
+        System.out.println(s.sub(5, 10, 20));    
+ } 
+}
+
+
+4) public class Mul { 
+    public int mul(int x, int y) 
+    { 
+        return (x*y); 
+  } 
+  
+    public int mul(int x, int y, int z) 
+    { 
+        return (x*y*z); 
+    } 
+   
+    public static void main(String args[]) 
+    { 
+        Mul s = new Mul(); 
+        System.out.println(s.mul(5, 10)); 
+        System.out.println(s.mul(5, 10, 20)); 
+       
+    } 
+}
+
+
+
+
+Method Overriding
+
+1)public class P { 
+    void show() 
+    { 
+        System.out.println("Display P"); 
+    } 
+} 
+  
+public class C extends P { 
+    void show() 
+    { 
+        System.out.println("Display C"); 
+    } 
+} 
+  
+public class MainClass
+ { 
+    public static void main(String[] args) 
+    { 
+        P obj1 = new P(); 
+        obj1.show(); 
+ 
+        P obj2 = new C(); 
+        obj2.show(); 
+    } 
+} 
+
+
+2)public class Fruit{
+public void taste()
+{
+System.out.println(“sweet”);
+}
+}
+public class apple extends Fruit{
+public void taste()
+{
+System.out.println(“ Apple is sweet”);
+}
+}
+public static void main(String[] args)
+{
+apple a = new apple();
+a.taste();
+}
+3) public class Dem{
+public void a()
+{
+System.out.println(“A”);
+}
+}
+public class b extends c{
+public void a(){
+System.out.println(“B”);
+}
+}
+public class Classmain()
+{
+public static void main(String[] args){
+b k = new b();
+k.a();
+}
+}
+
+
+Abstract class
+1)abstract class Base { 
+    abstract void fun(); 
+} 
+class Derived extends Base { 
+    void fun() 
+    { 
+        System.out.println("Derived fun() called"); 
+    } 
+} 
+public class MainClass { 
+    public static void main(String args[]) 
+    { 
+        Base b = new Derived(); 
+        b.fun(); 
+    } 
+}
+
+
+2)  abstract class Dem{
+abstract   void a();
+}
+class b extends Dem{
+public void a(){
+System.out.println(“B”);
+}
+}
+public class Classmain()
+{
+public static void main(String[] args){
+Dem k = new b();
+k.a();
+}
+}
+3)abstract class Animal{
+public abstract void sound();
+}
+public class Cat extends Animal{
+public void sound(){
+System.out.println(“Meow”);
+}
+Public static void main(String[] args){
+Animal obj=new cat();
+Obj.sound();
+}
+
+
+
+Interface
+
+1)import java.io.*;
+Import java.lang.*;
+interface P
+{ 
+    int id = 10; 
+    int fun(); 
+} 
+class  Person implements P
+{ 
+    public void fun() 
+    { 
+        System.out.println("Print id"+id); 
+    } 
+  
+    public static void main (String[] args) 
+    { 
+        Person t = new Person(); 
+        t.fun(); 
+     
+    } 
+} 
+
+
+
+2) import java.io.*; 
+  interface P
+{ 
+    int a = 10; 
+    void display(); 
+} 
+  
+class  K implements P
+{ 
+    public void display() 
+    { 
+        System.out.println("Print K"); 
+    } 
+  
+    public static void main (String[] args) 
+    { 
+        K t = new K(); 
+        t.display(); 
+     
+    } 
+} 
+
+
+3) import java.io.*; 
+import java.lang.*;
+  interface Pet
+{ 
+   
+    void display(); 
+} 
+  
+class  Dog implements Pet
+{ 
+    public void display() 
+    { 
+        System.out.println("yes"); 
+    } 
+  
+    public static void main (String[] args) 
+    { 
+        Dog t = new Dog(); 
+        t.display(); 
+     
+    } 
+} 
+
+
+
+
+Inheritance
+
+Single inheritance
+
+import java.io.*;
+class A
+ {
+    public void fun()
+    {
+        System.out.println("Display A");
+    }
+}
+ 
+class B extends A {
+    public void fun1() 
+{ 
+System.out.println("Display B"); 
+}
+}
+
+public class MainClass{
+    public static void main(String[] args)
+    {
+        B g = new B();
+        g.fun();
+        g.fun1();
+       
+    }
+}
+
+
+Multilevel inheritance
+
+ import java.io.*;
+import java.lang.*;
+class Parent
+ {
+    public void Behavior()
+    {
+        System.out.println("good");
+    }
+}
+ 
+class Child extends Parent {
+    public void ChildBeh() 
+{ 
+System.out.println("Normal"); 
+}
+}
+class Child1 extends Child {
+    public void ChildBeh1() 
+{ 
+System.out.println("ok"); 
+}
+}
+
+public class MainClass{
+    public static void main(String[] args)
+    {
+        Child1 g = new Child1();
+        g.Behavior();
+        g.ChildBeh();
+        g.ChildBeh1();
+       
+    }
+}
+
+
+Hierarichal inheritance
+
+import java.io.*;
+import java.lang.*;
+class Parent
+ {
+    public void Behavior()
+    {
+        System.out.println("good");
+    }
+}
+ 
+class Child extends Parent {
+    public void ChildBeh() 
+{ 
+System.out.println("Normal"); 
+}
+}
+class Child1 extends Parent {
+    public void ChildBeh1() 
+{ 
+System.out.println("ok"); 
+}
+}
+
+public class MainClass{
+    public static void main(String[] args)
+    {
+        Child1 g = new Child1();
+        g.Behavior();
+        g.ChildBeh();
+        g.ChildBeh1();
+       
+    }
+}
+
+
+
+Creating different packages
+
+package  ab;
+public class Addition{
+protected  int  addnum(int a,int b)
+{
+return a+b;
+}
+}
+package  xy{
+import  ab.*;
+class T extends Addition{
+public static void main(String[] args){
+T obj=new T();
+System.out.println(obj.addnum(10,20));
+}
+}
+
